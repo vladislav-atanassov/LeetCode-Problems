@@ -14,13 +14,11 @@ class Solution
 public:
     int maxProfit(const std::vector<int>& prices) 
     {
-        int size = prices.size();
-
-        if(size == 2)
+        if(prices.size() == 2)
         {
             return (prices[1] - prices[0]) >= 0 ? (prices[1] - prices[0]) : 0;
         }
-        else if(size == 1)
+        else if(prices.size() == 1)
         {
             return 0;
         }
@@ -29,9 +27,9 @@ public:
 
         tempMax = high - low;
 
-        for(size_t i = 1; i < size; i++)
+        for(size_t i = 1; i < prices.size(); i++)
         {   
-            if(low > prices[i] && (i != size - 1))
+            if(low > prices[i] && (i != prices.size() - 1))
             {
                 low = prices[i];
                 high = prices[i + 1];
