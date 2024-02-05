@@ -18,7 +18,7 @@ class Solution
 public:
     std::vector<int> twoSum(std::vector<int>& numbers, int target) 
     {
-        int front_it = 0, tail_it = numbers.size()-1;
+        int front_it = 0, tail_it = numbers.size() - 1;
 
         // Check if the vector consists of only 2 elements
         if((tail_it + 1) == 2) 
@@ -29,11 +29,11 @@ public:
         // Traverse until the iterators meet at the middle
         while(front_it < tail_it)
         {
-            if(numbers[front_it] + numbers[tail_it] == target) 
+            if(numbers[(size_t)front_it] + numbers[(size_t)tail_it] == target) 
             {
                 return {front_it + 1, tail_it + 1}; 
             }
-            else if(numbers[front_it] + numbers[tail_it] < target) 
+            else if(numbers[(size_t)front_it] + numbers[(size_t)tail_it] < target) 
             {
                 front_it++;
             }

@@ -19,11 +19,11 @@ Output:
 
 void printHistogram(std::vector<int>& values)
 {
-    for(int row = values.size(); row > 0; row--)
+    for(size_t row = values.size(); row > 0; row--)
     {
-        for(int col = 0; col <= values.size(); col++)
+        for(size_t col = 0; col <= values.size(); col++)
         {
-            if(row == values[col])
+            if(row == (size_t)values[col])
             {
                 std::cout << "#";
 
