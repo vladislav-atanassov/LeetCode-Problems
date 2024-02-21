@@ -28,12 +28,13 @@ public:
 
         int low = 1;
         int high = minLen;
+        bool commonPrefix;
 
         // Binary search for the common prefix length
         while(low <= high) 
         {
             int mid = (low + high) / 2;
-            bool commonPrefix = true;
+            commonPrefix = true;
 
             // Check if the substrings of length 'mid' are equal for all strings
             for(int i = 1; i < strs.size(); i++) 
