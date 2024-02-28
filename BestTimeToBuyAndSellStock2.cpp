@@ -15,15 +15,6 @@ class Solution
 public:
     int maxProfit(const std::vector<int>& prices) 
     {
-        if(prices.size() == 2)
-        {
-            return (prices[1] - prices[0]) >= 0 ? (prices[1] - prices[0]) : 0;
-        }
-        else if(prices.size() == 1)
-        {
-            return 0;
-        }
-
         int low = prices[0], high = prices[1];
         int tempProfit = 0, currentProfit = 0;
         size_t lastIndexOfLow = 0;
@@ -48,12 +39,7 @@ public:
             tempProfit = high - prices[lastIndexOfLow];
         }
 
-        if(currentProfit == 0 || tempProfit > 0)
-        {
-            currentProfit += tempProfit;
-        }
-
-        return currentProfit >= 0 ? currentProfit : 0;
+        return tempProfit > 0 ? (currentProfit += tempProfit) : currentProfit;
     }
 };
 
