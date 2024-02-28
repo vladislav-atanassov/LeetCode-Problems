@@ -48,7 +48,7 @@ public:
             tempProfit = high - prices[lastIndexOfLow];
         }
 
-        if((currentProfit + tempProfit) > 0)
+        if(currentProfit == 0 || tempProfit > 0)
         {
             currentProfit += tempProfit;
         }
